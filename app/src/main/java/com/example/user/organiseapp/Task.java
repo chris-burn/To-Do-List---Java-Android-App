@@ -9,11 +9,11 @@ public class Task {
     private int id;
     private String title;
     private String description;
-    private Boolean complete;
+    private String complete;
 //    private int due_date:
 
 
-    public Task(int id, String title, String description, Boolean complete){
+    public Task(int id, String title, String description, String complete){
         this.id = id;
         this.title = title;
         this.description = description;
@@ -45,11 +45,11 @@ public class Task {
         this.description = description;
     }
 
-    public Boolean getComplete() {
+    public String getComplete() {
         return complete;
     }
 
-    public void setComplete(Boolean complete) {
+    public void setComplete(String complete) {
         this.complete = complete;
     }
 

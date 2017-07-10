@@ -15,7 +15,7 @@ public class TaskTest {
 
     @Before
     public void before(){
-        task = new Task(3, "Buy groceries", "Food to buy:  bread, milk, biscuits", false);
+        task = new Task(3, "Buy groceries", "Food to buy:  bread, milk, biscuits", "No");
     }
 
     @Test
@@ -48,13 +48,13 @@ public class TaskTest {
 
     @Test
     public void canGetCompletion(){
-        assertEquals(false, task.getComplete());
+        assertEquals("No", task.getComplete());
     }
 
     @Test
     public void canSetCompletion(){
-        task.setComplete(true);
-        assertEquals(true, task.getComplete());
+        task.setComplete("Yes");
+        assertEquals("Yes", task.getComplete());
     }
 
 }

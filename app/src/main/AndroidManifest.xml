@@ -12,24 +12,22 @@
         <activity android:name=".MainActivityTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ActivityList"
-            android:parentActivityName=".MainActivityTitle">
-        </activity>
-
+            android:label="@string/list_title"
+            android:parentActivityName=".MainActivityTitle"/>
         <activity
             android:name=".ActivityTaskDetails"
-            android:parentActivityName=".MainActivityTitle">
-        </activity>
-
+            android:label="@string/task_details_title"
+            android:parentActivityName=".MainActivityTitle"/>
         <activity
             android:name=".ActivityLogTask"
-            android:parentActivityName=".MainActivityTitle">
-        </activity>
-
+            android:label="@string/new_task_title"
+            android:parentActivityName=".MainActivityTitle"/>
     </application>
 
 </manifest>

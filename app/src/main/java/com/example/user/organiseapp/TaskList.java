@@ -12,11 +12,11 @@ public class TaskList {
 
     public TaskList(){
         list = new ArrayList<Task>();
-        list.add(new Task(1, "Pay Council Tax", "July payment", false));
-        list.add(new Task(2, "Cut Grass", "Bin day, Tuesday", false));
-        list.add(new Task(3, "Call mum", "Ask about holidays and dogs", false));
-        list.add(new Task(4, "Do weekly shop", "To buy: milk, bread, oj, apples, things for baking", false));
-        list.add(new Task(5, "Book flights to France", "Date sometime in August, two weeks, from Edinburgh or Glasgow", false));
+        list.add(new Task(1, "Pay Council Tax", "July payment", "No"));
+        list.add(new Task(2, "Cut Grass", "Bin day, Tuesday", "No"));
+        list.add(new Task(3, "Call mum", "Ask about holidays and dogs", "No"));
+        list.add(new Task(4, "Do weekly shop", "To buy: milk, bread, oj, apples, things for baking", "No"));
+        list.add(new Task(5, "Book flights to France", "Date sometime in August, two weeks, from Edinburgh or Glasgow", "No"));
     }
 
     public ArrayList<Task> getList() {

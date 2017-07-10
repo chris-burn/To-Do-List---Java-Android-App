@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">Organise</string>
     <string name="menu_title">Log New Task</string>
+    <string name="title_page_welcome">Welcome to Organise.</string>
+    <string name="title_page_welcome2">Organising your life one task at a time!</string>
+    <string name="task_detail_title">Task heading here...</string>
+    <string name="task_detail_description">Task description detail here...</string>
+    <string name="task_detail_due_date">Task due date</string>
+    <string name="task_complete_box">Task completed?</string>
+    <string name="task_priority_box">Priority task?</string>
+    <string name="edit_task_detail_button1">Edit Task</string>
+    <string name="delete_task_detail_button">Delete Task</string>
+    <string name="save_task_button">Save Task</string>
+    <string name="task_details_title">Full Task Details</string>
+    <string name="new_task_title">Log New Task</string>
+    <string name="list_title">Task List</string>
+    <string name="full_task_list_redirect">View All Tasks</string>
+    <string name="log_task_redirect">Log New Task</string>
+    <string name="complete_toggle">Complete? (image in here?)</string>
+    <string name="menu">Add New Task</string>
+    <string name="launch_calendar_button">Calendar</string>
+
 </resources>

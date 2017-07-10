@@ -8,12 +8,62 @@
     tools:context="com.example.user.organiseapp.MainActivityTitle">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/welcomeText1"
+        android:layout_width="394dp"
+        android:layout_height="67dp"
+        android:text="@string/title_page_welcome"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
+
+    <Button
+        android:id="@+id/all_task_button"
+        android:layout_width="157dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="onViewAllButtonClicked"
+        android:text="@string/full_task_list_redirect"
+        app:layout_constraintBottom_toTopOf="@+id/log_task_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/log_task_button"
+        android:layout_width="159dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="113dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="onSaveNewButtonClicked"
+        android:text="@string/log_task_redirect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomeText2"
+        android:layout_width="0dp"
+        android:layout_height="83dp"
+        android:text="@string/title_page_welcome2"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="29dp"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText1"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
