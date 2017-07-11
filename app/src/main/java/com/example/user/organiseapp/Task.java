@@ -13,15 +13,15 @@ public class Task implements Serializable {
 
     private String title;
     private String description;
-    private boolean complete;
+//    private boolean complete;
     private String due_date;
 
 
-    public Task(String title, String description, String due_date, boolean complete){
+    public Task(String title, String description, String due_date){
 
         this.title = title;
         this.description = description;
-        this.complete = complete;
+//        this.complete = complete;
         this.due_date = due_date;
 
     }
@@ -43,14 +43,13 @@ public class Task implements Serializable {
         this.description = description;
     }
 
-    public boolean getComplete() {
-        return complete;
-    }
-
-    public void setComplete(boolean complete) {
-        this.complete = complete;
-    }
-
+//    public boolean getComplete() {
+//        return complete;
+//    }
+//
+//    public void setComplete(boolean complete) {
+//        this.complete = complete;
+//    }
 
     public String getDueDate() {
         return due_date;

@@ -21,13 +21,13 @@ public class ActivityTaskDetails extends AppCompatActivity {
         title = (TextView)findViewById(R.id.task_title_detail);
         description = (TextView)findViewById(R.id.task_description);
         due_date = (TextView)findViewById(R.id.text_due_date);
-        complete = (CheckBox) findViewById(R.id.completeCheckbox);
+//        complete = (CheckBox) findViewById(R.id.completeCheckbox);
 
         Task task = (Task)getIntent().getExtras().get("task");
         title.setText(task.getTitle());
         description.setText(task.getDescription());
         due_date.setText(task.getDueDate());
-        complete.setChecked(task.getComplete());
+//        complete.setChecked(task.getComplete());
 
     }
 
