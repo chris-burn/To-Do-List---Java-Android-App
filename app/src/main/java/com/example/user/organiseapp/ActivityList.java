@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-public class ActivityList extends AppCompatActivity implements OnClickListener {
+public class ActivityList extends AppCompatActivity implements View.OnClickListener {
 
     ArrayList<Task> myTaskList;
     SharedPreferences sharedPref;

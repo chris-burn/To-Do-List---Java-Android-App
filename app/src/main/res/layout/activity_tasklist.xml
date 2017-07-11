@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.organiseapp.ActivityList">
+    tools:context="com.example.user.organiseapp.ActivityList"
+    android:onClick="onClick">
 
     <Button
         android:id="@+id/add_button"
