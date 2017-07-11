@@ -33,8 +33,8 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
             TextView title_item = (TextView) listItemView.findViewById(R.id.title_item);
             title_item.setText(currentTask.getTitle());
 
-            TextView complete_display = (TextView) listItemView.findViewById(R.id.complete_display);
-            complete_display.setText(currentTask.getComplete());
+//            TextView complete_display = (CheckBox) listItemView.findViewById(R.id.complete_display);
+//            complete_display.setText(currentTask.getComplete());
 
             listItemView.setTag(currentTask);
 

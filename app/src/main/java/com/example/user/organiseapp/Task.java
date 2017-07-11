@@ -1,33 +1,31 @@
 package com.example.user.organiseapp;
 
+import java.io.Serializable;
+
+import static android.R.attr.id;
+import static com.example.user.organiseapp.R.id.due_date;
+
 /**
  * Created by user on 09/07/2017.
  */
 
-public class Task {
+public class Task implements Serializable {
 
-    private int id;
     private String title;
     private String description;
-    private String complete;
-//    private int due_date:
+//    private boolean complete;
+    private String due_date;
 
 
-    public Task(int id, String title, String description, String complete){
-        this.id = id;
+    public Task(String title, String description, String due_date){
+
         this.title = title;
         this.description = description;
-        this.complete = complete;
-//        this.due_date = due_date;
+//        this.complete = complete;
+        this.due_date = due_date;
+
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -45,22 +43,22 @@ public class Task {
         this.description = description;
     }
 
-    public String getComplete() {
-        return complete;
-    }
-
-    public void setComplete(String complete) {
-        this.complete = complete;
-    }
-
-
-//    public int getDueDate() {
-//        return due_date;
+//    public String getComplete() {
+//        return complete;
 //    }
 //
-//    public void setDueDate(int due_date) {
-//        this.due_date = due_date;
+//    public void setComplete(String complete) {
+//        this.complete = complete;
 //    }
+
+
+    public String getDueDate() {
+        return due_date;
+    }
+
+    public void setDueDate(String due_date) {
+        this.due_date = due_date;
+    }
 
 
 }
