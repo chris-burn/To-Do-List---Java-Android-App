@@ -8,7 +8,7 @@
     <string name="task_detail_due_date">Task due date</string>
     <string name="task_complete_box">Task completed?</string>
     <string name="task_priority_box">Priority task?</string>
-    <string name="edit_task_detail_button1">Edit Task</string>
+    <string name="edit_task_detail_button1">Save</string>
     <string name="delete_task_detail_button">Delete Task</string>
     <string name="save_task_button">Save Task</string>
     <string name="task_details_title">Full Task Details</string>
@@ -21,6 +21,7 @@
     <string name="launch_calendar_button">Calendar</string>
     <string name="preference_file_key">TASK_LIST</string>
     <string name="edit_task_title">Edit Task</string>
+    <string name="due_date_title">Due Date:</string>
 
 
 </resources>

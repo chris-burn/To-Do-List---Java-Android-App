@@ -25,14 +25,18 @@ public class ActivityList extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_tasklist);
 
         sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+//        CLEAR SHARED PREFS WHEN REBOOT APP
 //        SharedPreferences.Editor delete = sharedPref.edit();
 //        delete.clear();
 //        delete.apply();
+
         String taskList = sharedPref.getString("MyTasks", new ArrayList<Task>().toString());
         Log.d("Tasks String", taskList);
 
-        //        convert string back to type required
+//        convert string back to type required
 //        TypeToken<Task>, convert back to Task only
+
         Gson gson = new Gson();
 
 
@@ -41,31 +45,8 @@ public class ActivityList extends AppCompatActivity implements View.OnClickListe
         myTaskList = gson.fromJson(taskList, taskArrayList.getType());
         Log.d("myFavourites", myTaskList.toString());
 
-//        REFACTOR, new addToTaskList method
+        amendTaskList(myTaskList);
 
-        if (getIntent().getExtras() != null) {
-            Task newTask1 = (Task) getIntent().getExtras().get("newTask");
-
-            boolean found = false;
-            int counter = 0;
-            for(Task task:myTaskList){
-                if(task.getTitle().equals(newTask1.getTitle())){
-                    found = true;
-                    break;
-                }
-                counter++;
-            }
-
-            if(found){
-                myTaskList.remove(counter);
-                myTaskList.add(counter, newTask1);
-            }else{
-                myTaskList.add(newTask1);
-            }
-        }
-
-
-        //        SAVES ENTRY TO MY TASK LIST
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("MyTasks", gson.toJson(myTaskList));
         editor.apply();
@@ -74,6 +55,43 @@ public class ActivityList extends AppCompatActivity implements View.OnClickListe
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(taskListAdapter);
+    }
+
+
+    public void amendTaskList(ArrayList<Task> list) {
+
+//      check intent from LogTask or EditTask methods for Task (intent key)
+//      if Task is present, Loop through string ArrayList (myTaskList) to see if instance of Task "newTask" already exists
+
+        if (getIntent().getExtras() != null) {
+//          assign variable to "newTask" instance key we want to add to Array
+            Task newTask1 = (Task) getIntent().getExtras().get("newTask");
+
+//        set boolean instance to check for presence of task in myTaskList (false default)
+//        set counter to keep count on number of loops through array to dictate index place in array
+//        Search on title of task through get.Title(), once found 'breaks'
+
+            boolean found = false;
+            int counter = 0;
+            for(Task task:list) {
+                if (task.getTitle().equals(newTask1.getTitle())) {
+                    found = true;
+                    break;
+                }
+                counter++;
+            }
+
+//        if exists, edit tasklist entry; if not add task to myTaskList
+//        delete existing entry at index number dictated by counter
+//        reinstate edited task at same index number
+
+            if(found){
+                list.remove(counter);
+                list.add(counter, newTask1);
+            }else{
+                list.add(newTask1);
+            }
+        }
     }
 
 

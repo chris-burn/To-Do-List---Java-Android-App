@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
-
 
 
 public class ActivityTaskDetails extends AppCompatActivity {
@@ -16,10 +14,6 @@ public class ActivityTaskDetails extends AppCompatActivity {
     TextView description;
     TextView due_date;
     CheckBox complete;
-    EditText new_text_title;
-    EditText new_text_description;
-    CheckBox completeBox;
-    EditText txtDate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +30,6 @@ public class ActivityTaskDetails extends AppCompatActivity {
         description.setText(task.getDescription());
         due_date.setText(task.getDueDate());
         complete.setChecked(task.getComplete());
-
     }
 
     public void onEditButtonClick(View view){
@@ -52,7 +45,6 @@ public class ActivityTaskDetails extends AppCompatActivity {
         intent.putExtra("newTask", newTask);
         startActivity(intent);
     }
-
 
 
 }

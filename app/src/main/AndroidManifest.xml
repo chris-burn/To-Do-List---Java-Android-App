@@ -23,11 +23,11 @@
         <activity
             android:name=".ActivityTaskDetails"
             android:label="@string/task_details_title"
-            android:parentActivityName=".MainActivityTitle"/>
+            android:parentActivityName=".ActivityList"/>
         <activity
             android:name=".ActivityLogTask"
             android:label="@string/new_task_title"
-            android:parentActivityName=".MainActivityTitle"/>
+            android:parentActivityName=".ActivityList"/>
     </application>
 
 </manifest>
