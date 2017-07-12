@@ -17,7 +17,7 @@ public class ActivityLogTask extends AppCompatActivity implements View.OnClickLi
     EditText new_text_description;
 //    EditText due_date;
     Button save_button;
-    CheckBox checkBox2;
+    CheckBox completeBox;
     Button btnDatePicker;
     EditText txtDate;
     private int mYear, mMonth, mDay;
@@ -32,7 +32,7 @@ public class ActivityLogTask extends AppCompatActivity implements View.OnClickLi
         new_text_description = (EditText)findViewById(R.id.new_task_description);
 //        due_date = (EditText) findViewById(R.id.due_date);
         save_button = (Button) findViewById(R.id.save_button);
-        checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
+        completeBox = (CheckBox) findViewById(R.id.completeBox);
 
         btnDatePicker=(Button)findViewById(R.id.date_button);
         txtDate=(EditText)findViewById(R.id.due_date);
@@ -67,7 +67,9 @@ public class ActivityLogTask extends AppCompatActivity implements View.OnClickLi
         String newTitle = new_text_title.getText().toString();
         String newDescription = new_text_description.getText().toString();
         String newDueDate = txtDate.getText().toString();
-       Task newTask = new Task(newTitle, newDescription, newDueDate);
+        Boolean newComplete = completeBox.isChecked();
+
+       Task newTask = new Task(newTitle, newDescription, newDueDate, newComplete);
 //        now throw to Movie List
         Intent intent = new Intent(this, ActivityList.class);
         intent.putExtra("newTask", newTask);

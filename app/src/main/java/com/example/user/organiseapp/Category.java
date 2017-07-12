@@ -1,6 +1,5 @@
 package com.example.user.organiseapp;
 
-import static android.R.attr.id;
 
 /**
  * Created by user on 09/07/2017.

@@ -20,5 +20,7 @@
     <string name="menu">Add New Task</string>
     <string name="launch_calendar_button">Calendar</string>
     <string name="preference_file_key">TASK_LIST</string>
+    <string name="edit_task_title">Edit Task</string>
+
 
 </resources>

@@ -3,12 +3,10 @@ package com.example.user.organiseapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Movie;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,7 +18,6 @@ public class ActivityList extends AppCompatActivity implements View.OnClickListe
 
     ArrayList<Task> myTaskList;
     SharedPreferences sharedPref;
-    Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,28 +31,44 @@ public class ActivityList extends AppCompatActivity implements View.OnClickListe
         String taskList = sharedPref.getString("MyTasks", new ArrayList<Task>().toString());
         Log.d("Tasks String", taskList);
 
-        Gson gson = new Gson();
-//        convert string back to whatever type required
+        //        convert string back to type required
 //        TypeToken<Task>, convert back to Task only
+        Gson gson = new Gson();
 
+
+//       now have an ArrayList
         TypeToken<ArrayList<Task>> taskArrayList = new TypeToken<ArrayList<Task>>() {};
         myTaskList = gson.fromJson(taskList, taskArrayList.getType());
         Log.d("myFavourites", myTaskList.toString());
-//        now have an ArrayList
 
-
-        Log.d("myTasks", myTaskList.toString());
-//        Added in newTask to Array
+//        REFACTOR, new addToTaskList method
 
         if (getIntent().getExtras() != null) {
             Task newTask1 = (Task) getIntent().getExtras().get("newTask");
-            myTaskList.add(newTask1);
+
+            boolean found = false;
+            int counter = 0;
+            for(Task task:myTaskList){
+                if(task.getTitle().equals(newTask1.getTitle())){
+                    found = true;
+                    break;
+                }
+                counter++;
+            }
+
+            if(found){
+                myTaskList.remove(counter);
+                myTaskList.add(counter, newTask1);
+            }else{
+                myTaskList.add(newTask1);
+            }
         }
 
+
+        //        SAVES ENTRY TO MY TASK LIST
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("MyTasks", gson.toJson(myTaskList));
         editor.apply();
-//        SAVES ENTRY TO MY TASK LIST
 
         TaskListAdapter taskListAdapter = new TaskListAdapter(this, myTaskList);
 
