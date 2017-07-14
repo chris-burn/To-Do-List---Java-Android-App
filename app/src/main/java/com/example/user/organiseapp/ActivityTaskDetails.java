@@ -11,10 +11,10 @@ import android.widget.Toast;
 
 public class ActivityTaskDetails extends AppCompatActivity {
 
-    TextView title;
-    TextView description;
-    TextView due_date;
-    CheckBox complete;
+    private TextView title;
+    private TextView description;
+    private TextView due_date;
+    private CheckBox complete;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

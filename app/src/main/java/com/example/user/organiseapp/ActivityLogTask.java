@@ -15,12 +15,12 @@ import java.util.Calendar;
 
 public class ActivityLogTask extends AppCompatActivity implements View.OnClickListener {
 
-    EditText new_text_title;
-    EditText new_text_description;
-    Button save_button;
-    CheckBox completeBox;
-    Button btnDatePicker;
-    EditText txtDate;
+    private EditText new_text_title;
+    private EditText new_text_description;
+    private Button save_button;
+    private CheckBox completeBox;
+    private Button btnDatePicker;
+    private EditText txtDate;
     private int mYear, mMonth, mDay;
 
 
