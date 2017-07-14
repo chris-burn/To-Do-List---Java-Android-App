@@ -3,6 +3,7 @@ package com.example.user.organiseapp;
 import org.junit.Before;
 import org.junit.Test;
 
+import static java.lang.Boolean.FALSE;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -15,13 +16,9 @@ public class TaskTest {
 
     @Before
     public void before(){
-        task = new Task(3, "Buy groceries", "Food to buy:  bread, milk, biscuits", "No");
+        task = new Task("Buy groceries", "Food to buy:  bread, milk, biscuits", "24-07-2017", false);
     }
 
-    @Test
-    public void canGetId(){
-        assertEquals(3, task.getId());
-    }
 
     @Test
     public void canGetTitle(){
@@ -48,13 +45,28 @@ public class TaskTest {
 
     @Test
     public void canGetCompletion(){
-        assertEquals("No", task.getComplete());
+        assertEquals(false, task.getComplete());
     }
 
     @Test
     public void canSetCompletion(){
-        task.setComplete("Yes");
-        assertEquals("Yes", task.getComplete());
+        task.setComplete(true);
+        assertEquals(true, task.getComplete());
     }
+
+
+    @Test
+    public void canGetDueDate(){
+        assertEquals("24-07-2017", task.getDueDate());
+    }
+
+    @Test
+    public void canSetDueDate(){
+        task.setDueDate("30-07-2017");
+        assertEquals("30-07-2017", task.getDueDate());
+    }
+
+
+
 
 }

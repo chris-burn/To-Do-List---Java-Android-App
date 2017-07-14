@@ -9,13 +9,14 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import java.util.Calendar;
 
 public class ActivityLogTask extends AppCompatActivity implements View.OnClickListener {
 
     EditText new_text_title;
     EditText new_text_description;
-//    EditText due_date;
     Button save_button;
     CheckBox completeBox;
     Button btnDatePicker;
@@ -73,6 +74,7 @@ public class ActivityLogTask extends AppCompatActivity implements View.OnClickLi
 //        now throw to Movie List
         Intent intent = new Intent(this, ActivityList.class);
         intent.putExtra("newTask", newTask);
+        Toast.makeText(this, "Task saved!", Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 

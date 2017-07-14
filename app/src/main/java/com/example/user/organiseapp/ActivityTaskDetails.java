@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ActivityTaskDetails extends AppCompatActivity {
@@ -43,6 +44,7 @@ public class ActivityTaskDetails extends AppCompatActivity {
 //        now throw to Movie List
         Intent intent = new Intent(this, ActivityList.class);
         intent.putExtra("newTask", newTask);
+        Toast.makeText(this, "Task updated!", Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 
