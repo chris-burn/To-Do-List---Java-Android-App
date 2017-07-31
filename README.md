@@ -1,4 +1,4 @@
-# To-Do-List---Java-Android-Application, built using Android Studio
+# To-Do-List---Java-Android-Application
  
 Built (and fully-tested) using Gradle in Android Studio IDE.  
 
