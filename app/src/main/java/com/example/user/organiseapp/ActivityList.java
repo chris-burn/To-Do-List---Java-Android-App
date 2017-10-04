@@ -3,16 +3,16 @@ package com.example.user.organiseapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 public class ActivityList extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,9 +27,9 @@ public class ActivityList extends AppCompatActivity implements View.OnClickListe
         sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
 //        CLEAR SHARED PREFS WHEN REBOOT APP
-//        SharedPreferences.Editor delete = sharedPref.edit();
-//        delete.clear();
-//        delete.apply();
+        SharedPreferences.Editor delete = sharedPref.edit();
+        delete.clear();
+        delete.apply();
 
         String taskList = sharedPref.getString("MyTasks", new ArrayList<Task>().toString());
         Log.d("Tasks String", taskList);
@@ -110,23 +110,6 @@ public class ActivityList extends AppCompatActivity implements View.OnClickListe
 
 }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        super.onCreateOptionsMenu(menu);
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.main_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        if (item.getItemId() == R.id.Task_add){
-//            Intent intent = new Intent(this, ActivityLogTask.class);
-//            startActivity(intent);
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
 
 

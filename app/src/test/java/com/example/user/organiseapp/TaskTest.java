@@ -3,12 +3,8 @@ package com.example.user.organiseapp;
 import org.junit.Before;
 import org.junit.Test;
 
-import static java.lang.Boolean.FALSE;
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by user on 09/07/2017.
- */
 
 public class TaskTest {
 

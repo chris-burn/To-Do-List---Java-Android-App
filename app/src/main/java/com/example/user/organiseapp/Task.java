@@ -2,9 +2,6 @@ package com.example.user.organiseapp;
 
 import java.io.Serializable;
 
-/**
- * Created by user on 09/07/2017.
- */
 
 public class Task implements Serializable {
 
